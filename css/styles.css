@@ -445,13 +445,13 @@ p {
 
 .category-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
 
 .category-card {
   position: relative;
-  height: 280px;
+  height: 320px;
   border-radius: var(--radius-lg);
   overflow: hidden;
   cursor: pointer;
@@ -473,7 +473,9 @@ p {
   inset: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 60%);
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
   padding: 1.5rem;
   transition: background var(--transition);
 }
@@ -486,6 +488,13 @@ p {
   color: var(--white);
   font-size: 1.25rem;
   font-weight: 600;
+}
+
+.category-card .category-desc {
+  color: rgba(255,255,255,0.85);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0;
 }
 
 /* ========== FEATURES GRID ========== */
@@ -659,57 +668,111 @@ p {
 
 /* ========== PRODUCTS PAGE ========== */
 
-.product-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
+.product-category {
+  scroll-margin-top: 100px;
 }
 
-.product-section.reverse {
-  direction: rtl;
+.product-category-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
 }
 
-.product-section.reverse > * {
-  direction: ltr;
+.product-category-header h2 {
+  margin-bottom: 0.75rem;
 }
 
-.product-image {
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-}
-
-.product-image img {
-  width: 100%;
-  height: 380px;
-  object-fit: cover;
-}
-
-.product-info .section-label {
-  display: block;
-}
-
-.product-info h2 {
-  margin-bottom: 1rem;
-}
-
-.product-info > p {
+.product-category-header p {
   font-size: 1.0625rem;
-  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-.product-brands {
+.product-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.product-gallery-item {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 1;
+  background: var(--gray-100);
+}
+
+.product-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.product-gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+.product-gallery-item .product-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.625rem 0.75rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+  color: var(--white);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.product-gallery-hero {
+  grid-column: span 2;
+  grid-row: span 2;
+  aspect-ratio: auto;
+}
+
+.product-brands-row {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-top: 1.5rem;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
   font-size: 0.875rem;
   color: var(--gray-400);
+  flex-wrap: wrap;
 }
 
-.product-brands strong {
+.product-brands-row strong {
   color: var(--gray-700);
+}
+
+/* ========== WHATSAPP FLOATING BUTTON ========== */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  z-index: 90;
+  transition: all var(--transition);
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-float svg {
+  width: 32px;
+  height: 32px;
+  fill: var(--white);
 }
 
 /* ========== CONTACT PAGE ========== */
@@ -916,8 +979,8 @@ p {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .product-section {
-    gap: 3rem;
+  .product-gallery {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -1043,15 +1106,14 @@ p {
     grid-template-columns: 1fr;
   }
 
-  .product-section,
-  .product-section.reverse {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    direction: ltr;
+  .product-gallery {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .product-image img {
-    height: 260px;
+  .product-gallery-hero {
+    grid-column: span 2;
+    grid-row: span 1;
+    aspect-ratio: 16/9;
   }
 
   .locations-grid {
@@ -1090,5 +1152,27 @@ p {
   .btn {
     padding: 0.75rem 1.5rem;
     font-size: 0.9375rem;
+  }
+
+  .product-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-gallery-hero {
+    grid-column: span 2;
+    grid-row: span 1;
+    aspect-ratio: 16/9;
+  }
+
+  .whatsapp-float {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 52px;
+    height: 52px;
+  }
+
+  .whatsapp-float svg {
+    width: 28px;
+    height: 28px;
   }
 }
