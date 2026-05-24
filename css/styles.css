@@ -191,16 +191,14 @@ p {
   left: 0;
   right: 0;
   z-index: 100;
-  background: var(--glass-bg);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  border-bottom: 1px solid var(--glass-border);
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   transition: all var(--transition);
 }
 
 .navbar.scrolled {
-  box-shadow: 0 1px 24px rgba(0, 0, 0, 0.4);
-  background: rgba(11, 15, 25, 0.92);
+  box-shadow: 0 1px 24px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
 }
 
 .navbar .container {
@@ -230,7 +228,7 @@ p {
   font-family: var(--font-heading);
   font-size: 0.9375rem;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: #374151;
   transition: color var(--transition);
   position: relative;
 }
@@ -273,7 +271,7 @@ p {
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--text-primary);
+  background: #1F2937;
   transition: all var(--transition);
   border-radius: 2px;
 }
