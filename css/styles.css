@@ -218,6 +218,14 @@ p {
   width: auto;
 }
 
+.nav-logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1F2937;
+  letter-spacing: 0.05em;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
