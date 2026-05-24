@@ -18,9 +18,9 @@
   --border-color: rgba(255, 255, 255, 0.08);
   --border-hover: rgba(185, 28, 28, 0.3);
 
-  --font-heading: 'IBM Plex Sans', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --font-mono: 'IBM Plex Mono', monospace;
+  --font-heading: 'Anton', sans-serif;
+  --font-body: 'Anton', sans-serif;
+  --font-mono: 'Anton', sans-serif;
 
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
   --shadow: 0 2px 8px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3);
