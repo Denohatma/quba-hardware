@@ -220,10 +220,17 @@ p {
 
 .nav-logo-text {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #1F2937;
-  letter-spacing: 0.05em;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.logo-quba {
+  color: #DC2626;
+}
+
+.logo-hardware {
+  color: #1E40AF;
 }
 
 .nav-links {
