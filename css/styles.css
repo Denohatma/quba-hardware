@@ -170,6 +170,20 @@ p {
   box-shadow: 0 6px 20px rgba(255, 255, 255, 0.08);
 }
 
+.btn-blue {
+  background: #1E40AF;
+  color: #fff;
+  border-color: #1E40AF;
+}
+
+.btn-blue:hover {
+  background: #1E3A8A;
+  border-color: #1E3A8A;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);
+}
+
 .btn-outline-dark {
   background: transparent;
   color: var(--red-500);
